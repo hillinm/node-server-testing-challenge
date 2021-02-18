@@ -15,9 +15,8 @@ function findById(id) {
     return db('Golfers').where({ id }).first();
 }
 
-async function insert(newGolfer) {
-    const [id] = await db('Golfers').insert(newGolfer, 'id');
-    return await db('Golfers').where({id}).first();
+function insert(newGolfer) {
+    return db('Golfers').insert(newGolfer);
 }
 
 function remove(id) {
